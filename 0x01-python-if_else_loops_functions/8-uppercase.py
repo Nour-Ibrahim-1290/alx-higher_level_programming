@@ -7,4 +7,4 @@ def uppercase(s):
             output += chr(ord(s[i]) - (97 - 65))
         else:
             output += s[i]
-    print(output)
+    print("{}".format(output))
