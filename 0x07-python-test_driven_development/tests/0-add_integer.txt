@@ -1,0 +1,70 @@
+===============================
+ Test Library 0-add_integer.py
+===============================
+
+This library has one function called
+``add_integer(a, b=98)``
+
+which returns the summation of its arguments.  For numbers,
+that value is equivalent to using the ``+`` operator.
+
+Numbers
+=======
+
+::
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 3)
+    5
+
+::
+    >>> add_integer(2.5, 12)
+    14
+
+::
+    >>> add_integer(5.2)
+    103
+
+::
+    >>> add_integer(102, 11.1)
+    113
+
+
+Errors
+=======
+``add_integer(a, b=98) will raise a ``TypeError``` exception if any of its arguments are not numbers, strings, lists, or tuples.
+
+The function will fail in case one of the arguments is string type
+::
+    >>> add_integer(1, "2")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer("Hey", 5)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+The function will fail in case one of its arguments is an iterable
+    
+::
+    >>> add_integer([1.1], 5)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+The function will fail in case one of the numbers is "NaN"
+
+::
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+And if its presented with 'inf'
+
+::
+    >>> add_integer(12, float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
