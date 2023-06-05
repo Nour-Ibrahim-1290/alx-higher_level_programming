@@ -1,0 +1,80 @@
+===============================
+ Test Library 4-print_square.py
+===============================
+
+This library has one function called
+``print_square(size)``
+
+which prints a square using chracter '#' with size.
+
+Numbers
+=======
+
+The function is supposed to accpet only one int argument
+
+::
+
+    >>> print_square = __import__('4-print_square').print_square
+    >>> print_square(2)
+    ##
+    ##
+
+::
+    >>> print_square(5)
+    #####
+    #####
+    #####
+    #####
+    #####
+
+
+Errors
+=======
+``print_square(size) will raising exception if size exists, is not an int, and >=0.
+
+The function raise a TypeError if size is not an int
+::
+    >>> print_square("2")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square(5.2)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square(-2.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+
+The function raises a ValueError if int is less than 0
+    
+::
+    >>> print_square(-5)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+    >>> print_square(None)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+The function will fail in case one of the numbers is "NaN"
+
+::
+    >>> print_square(int('nan'))
+    Traceback (most recent call last):
+    ValueError: invalid literal for int() with base 10: 'nan'
+
+And if its presented with 'inf'
+
+::
+    >>> print_square(int('inf'))
+    Traceback (most recent call last):
+    ValueError: invalid literal for int() with base 10: 'inf'
+
+Without arguments at all
+
+::
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
