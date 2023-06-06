@@ -1,13 +1,9 @@
 #!/usr/bin/python3
-"""
-Defines a Rectangle class.
-"""
+"""Defines a Rectangle class."""
 
 
 class Rectangle:
-    """
-    Represents a rectangle.
-    """
+    """Represents a rectangle."""
 
     __width = 0
     __height = 0
@@ -24,16 +20,11 @@ class Rectangle:
 
     @property
     def width(self):
-        """
-        Retrieve width
-        """
+        """Get/set the width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """
-        Set weight as value
-        """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
 
@@ -43,16 +34,11 @@ class Rectangle:
 
     @property
     def height(self):
-        """
-        Retrieve width
-        """
+        """Get/set the height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """
-        Set weight as value
-        """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
 
