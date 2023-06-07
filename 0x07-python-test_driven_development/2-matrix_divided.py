@@ -26,6 +26,7 @@ def matrix_divided(matrix, div):
     # check for values inside each row
     for row in matrix:
         if sum([not isinstance(value, (int, float)) for value in row]) != 0:
+            msg = "matrix must be a matrix (list of lists) of integers/floats"
             raise TypeError(msg)
 
     # Perform Divion operation (matrix / div)
