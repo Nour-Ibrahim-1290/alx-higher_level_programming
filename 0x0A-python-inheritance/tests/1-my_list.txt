@@ -1,0 +1,48 @@
+1.my_list.py module
+=====================
+
+
+Import class
+>>> MyList = __import__(1-my_list).MyList
+
+
+check test cases (appending and printing lists)
+>>> my_list = MyList()
+
+>>> my_list.append(1)
+
+>>> my_list.append(4)
+
+>>> my_list.append(10)
+
+>>> my_list.append(0)
+
+>>> my_list.append(3)
+
+>>> print(my_list)
+[1, 4, 10, 0, 3]
+
+>>> my_list.print_sorted()
+[0, 1, 3, 4, 10]
+
+>>> print(my_list)
+[0, 1, 3, 4, 10]
+
+checking creating empty list/object
+>>> empty_list = MyList()
+
+>>> empty_list.print_sorted()
+[]
+
+check appending null value to list/object
+>>> null_list = MyList()
+
+>>> null_list.append(NaN)
+Traceback (most recent call last):
+NameError: name 'NaN' is not defined
+
+>>> print(null_list)
+[]
+
+>> null_list.print_sorted()
+[]
