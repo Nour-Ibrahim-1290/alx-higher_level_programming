@@ -3,6 +3,11 @@
 
 
 def matrix_mul(m_a, m_b):
+    """
+    Input: two matrices
+    Output: If passed all tests, then multiplication of
+            both matrices.
+    """
 
     # Check if m_a and m_b are in fact lists
     if not isinstance(m_a, list):
