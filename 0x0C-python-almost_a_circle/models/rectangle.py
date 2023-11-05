@@ -48,9 +48,9 @@ class Rectangle(Base):
     def width(self, value):
         """Set/get width of a Rectangle instance."""
         if type(value) is not int:
-            raise TypeError("width must be an integer.")
+            raise TypeError("width must be an integer")
         if value <= 0:
-            raise ValueError("width must be more than zero.")
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -62,9 +62,9 @@ class Rectangle(Base):
     def height(self, value):
         """Set/get height of a Rectangle instance."""
         if type(value) is not int:
-            raise TypeError("height must be an integer.")
+            raise TypeError("height must be an integer")
         if value <= 0:
-            raise ValueError("height must be more than zero.")
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -76,9 +76,9 @@ class Rectangle(Base):
     def x(self, value):
         """Set/get x position of a Rectangle instance."""
         if type(value) is not int:
-            raise TypeError("x position must be an integer.")
+            raise TypeError("x must be an integer")
         if value < 0:
-            raise ValueError("x position must be more than or equal zero.")
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -90,7 +90,7 @@ class Rectangle(Base):
     def y(self, value):
         """Set/get y position of a Rectangle instance."""
         if type(value) is not int:
-            raise TypeError("y position must be an integer.")
+            raise TypeError("y must be an integer")
         if value < 0:
-            raise ValueError("y position must be more than or equal zero.")
+            raise ValueError("y must be >= 0")
         self.__y = value
