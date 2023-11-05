@@ -4,6 +4,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """A Child class of Base to define a rectangle instance.
 
@@ -65,7 +66,6 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("height must be more than zero.")
         self.__height = value
-
 
     @property
     def x(self):
