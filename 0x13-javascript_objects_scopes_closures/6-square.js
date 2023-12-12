@@ -1,13 +1,9 @@
 #!/usr/bin/node
 // define a Square subclass with exta instance functions
 
-const Rectangle = require('./4-rectangle.js');
+const Squarebase = require('./5-square.js');
 
-module.exports = class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
-  }
-
+module.exports = class Square extends Squarebase {
   charPrint (c) {
     if (c === undefined) {
       c = 'X';
