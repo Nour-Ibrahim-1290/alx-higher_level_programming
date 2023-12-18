@@ -14,17 +14,17 @@ if __name__ == '__main__':
                 db=sys.argv[3])
     except MySQLdb.Error:
         print("connection error!")
-    
-    cursor = con.cursor()  #cursor object is used 4 execution of sql queries
-    
+
+    cursor = con.cursor()
+
     try:
         cursor.execute("SELECT * FROM states ORDER BY states.id")
         data = cursor.fetchall()
-    
+
         for row in data:
             print(row)
     except MySQL.Error:
         print("failed execution!")
-    
+
     cursor.close()
     con.close()
