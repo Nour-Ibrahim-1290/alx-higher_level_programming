@@ -5,21 +5,26 @@ if __name__ == '__main__':
     import MySQLdb
     import sys
 
-    con = MySQLdb.connect(
-            host='localhost',
-            port=3306,
-            user=sys.argv[1],
-            passwd=sys.argv[2],
-            db=sys.argv[3])
+    try:
+        con = MySQLdb.connect(
+                host='localhost',
+                port=3306,
+                user=sys.argv[1],
+                passwd=sys.argv[2],
+                db=sys.argv[3])
+    except MySQLdb.Error:
+        print("connection error!")
     
     cursor = con.cursor()  #cursor object is used 4 execution of sql queries
-    cursor.execute("SELECT cities.id, cities.name, states.name FROM cities \
-             INNER JOIN states on state_id = states.id \
-            ORDER BY cities.id ASC;")
-    mydata = cursor.fetchall()
     
-    for row in mydata:
-        print(row)
+    try:
+        cursor.execute("SELECT * FROM states ORDER BY states.id")
+        data = cursor.fetchall()
+    
+        for row in data:
+            print(row)
+    except MySQL.Error:
+        print("failed execution!")
     
     cursor.close()
-    db.close()
+    con.close()
