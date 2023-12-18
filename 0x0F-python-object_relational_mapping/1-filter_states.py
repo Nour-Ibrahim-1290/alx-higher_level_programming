@@ -18,7 +18,7 @@ if __name__ == '__main__':
     cursor = con.cursor()
 
     try:
-        cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' \
+        cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' \
                 ORDER BY states.id")
         data = cursor.fetchall()
 
